@@ -83,7 +83,7 @@ def download_repo_code():
                 file_stream.write(f.read())
             file_stream.seek(0)
             file_data = file_stream.getvalue()
-            
+
             # Create a response object with the file data
             response = app.response_class(
                 file_data,
@@ -91,7 +91,7 @@ def download_repo_code():
                 headers={'Content-Disposition': f'attachment; filename="{output_file}"'}
             )
             return response
-    
+
     # Render the HTML template with CSS
     html_template = '''
     <!DOCTYPE html>
@@ -118,6 +118,10 @@ def download_repo_code():
             h1 {
                 color: #333;
             }
+            small {
+                font-size: 12px;
+                color: #666;
+            }
             input[type="text"] {
                 padding: 10px;
                 font-size: 16px;
@@ -139,6 +143,7 @@ def download_repo_code():
     <body>
         <div class="container">
             <h1>GitHub Repository Code Downloader</h1>
+            <small>*only works for Python now, sorry</small>
             <form method="post">
                 <input type="text" id="repo_url" name="repo_url" placeholder="Enter repository URL" required>
                 <br><br>
