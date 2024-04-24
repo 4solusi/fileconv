@@ -1,6 +1,6 @@
 # Github Repository Code Downloder
 
-Python script utilizing Flask to create a web application that allows users to download code from public Github repository.
+Python script utilizing Flask to create a web application that allows users to download code from public Github repository into a single-flow source text file.
 
 # Dependencies
 
